@@ -1,0 +1,11 @@
+{
+  "name": "@microverse-network/logger",
+  "version": "0.0.0",
+  "bin": {
+    "microverse-logger": "bin/logger.js"
+  },
+  "dependencies": {
+    "@microverse-network/core": "0.0.0",
+    "append-only": "^0.2.3"
+  }
+}

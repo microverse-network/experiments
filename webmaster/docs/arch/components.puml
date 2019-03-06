@@ -1,0 +1,56 @@
+@startuml
+!include ../common.puml
+
+package "User Interaction Components" {
+  component [microverse-cli]
+}
+
+package "WebMaster Network Nodes" {
+  component [bootstrap]
+  component [auth]
+  component [deploy]
+  component [web]
+
+  auth --> bootstrap : network
+  deploy --> bootstrap : network
+  web --> bootstrap : network
+
+  deploy --> auth : authorize
+  deploy --> web : replicates
+}
+
+[microverse-cli] --> [auth] : user login
+[microverse-cli] --> [deploy] : version deployment
+
+database "network collections" {
+  component nodes
+  component clusters
+  component workers
+}
+
+database "user collections" {
+  component users
+  component sessions
+}
+
+database "application collections" {
+  component applications
+  component deployments
+  component repository
+}
+
+bootstrap .. nodes
+bootstrap .. clusters
+bootstrap .. workers
+
+auth .. users
+auth .. sessions
+
+deploy .. applications
+deploy .. deployments
+deploy .. repository
+
+web .. deployments
+web .. repository
+
+@enduml

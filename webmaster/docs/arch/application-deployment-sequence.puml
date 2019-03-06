@@ -1,0 +1,117 @@
+@startuml
+
+!include ../common.puml
+
+participant user as "User"
+participant CLI as "microverse-cli"
+participant deploy as "webmaster-node-deploy"
+participant auth as "webmaster-node-auth"
+
+user -> CLI: $ micro deploy
+activate CLI
+
+CLI -> deploy: GET /application
+activate deploy
+
+note right
+  operation: info
+end note
+deploy -> auth: GET /application
+activate auth
+deploy <-- auth: authorization
+deactivate auth
+
+alt user is not authorized
+  user x<-- deploy: not authorized
+end
+
+deploy -> deploy: query application
+CLI <-- deploy: application record
+deactivate deploy
+
+alt application is not found
+  CLI -> deploy: POST /application
+  activate deploy
+  note right
+    operation: create an application
+  end note
+  deploy -> auth: POST /application
+  activate auth
+  deploy <-- auth: authorization
+  deactivate auth
+
+  alt user is not authorized
+    user x<-- deploy: not authorized
+  end
+
+  deploy -> deploy: create an application record
+  activate deploy
+  deactivate deploy
+  CLI <-- deploy: application record
+  deactivate deploy
+end
+
+CLI -> deploy: POST /deploy/${applicationId}
+activate deploy
+deploy -> auth: POST /authorize
+note right
+  operation: create a deployment
+end note
+activate auth
+deploy <-- auth: authorization
+deactivate auth
+
+alt user is not authorized
+  user x<-- deploy: not authorized
+end
+
+deploy -> deploy: generate a hostname
+activate deploy
+deactivate deploy
+
+deploy -> deploy: create a deployment record
+activate deploy
+deactivate deploy
+
+CLI <-- deploy: deployment record
+deactivate deploy
+
+alt deployment failed
+  user x<-- deploy: error
+end
+
+CLI -> CLI: bundle application
+activate CLI
+deactivate CLI
+
+CLI -> deploy: POST /deploy/upload/${applicationId}
+activate deploy
+deploy -> auth: POST /authorize
+note right
+  operation: deploya a version
+end note
+deploy <-- auth: authorization
+alt user is not authorized
+  user x<-- deploy: not authorized
+end
+
+deploy -> deploy: validate and verify bundle
+alt bundle is too big
+  user x<-- deploy: bundle is too big
+else an error occurred
+  user x<-- deploy: error
+end
+
+deploy -> deploy: replicate deployment
+activate deploy
+deactivate deploy
+
+deploy -> deploy: register deployment server handlers
+activate deploy
+deactivate deploy
+
+user <-- deploy: success
+deactivate deploy
+deactivate CLI
+
+@enduml

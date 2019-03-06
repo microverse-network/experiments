@@ -1,0 +1,11 @@
+{
+  "name": "@microverse-network/demo-sha256",
+  "version": "0.0.0",
+  "bin": {
+    "microverse-demo-sha256": "bin/demo-sha256.js"
+  },
+  "dependencies": {
+    "@microverse-network/core": "0.0.0",
+    "@microverse-network/database": "0.0.0"
+  }
+}

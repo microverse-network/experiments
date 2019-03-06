@@ -1,0 +1,9 @@
+{
+  "name": "@microverse-network/sync",
+  "version": "0.0.0",
+  "dependencies": {
+    "@microverse-network/core": "0.0.0",
+    "crypto-random-string": "^1.0.0",
+    "debug": "^4.1.1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@microverse-network/agent",
+  "version": "0.0.0",
+  "bin": {
+    "microverse-agent": "bin/agent.js"
+  },
+  "dependencies": {
+    "@microverse-network/core": "0.0.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "vm2": "^3.6.10"
+  }
+}

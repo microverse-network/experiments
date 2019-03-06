@@ -1,0 +1,12 @@
+{
+  "name": "@microverse-network/sync-cli",
+  "version": "0.0.0",
+  "bin": {
+    "microverse-sync": "index.js"
+  },
+  "dependencies": {
+    "@microverse-network/core": "0.0.0",
+    "@microverse-network/sync": "0.0.0",
+    "yargs": "^13.2.2"
+  }
+}

@@ -1,0 +1,30 @@
+@startuml
+!include ../common.puml
+start
+partition user {
+  :$ npm install --global microverse-cli;
+  :$ micro init hello-world;
+  :$ cd hello-world;
+  :$ micro [register | login];
+  :$ micro deploy;
+}
+partition webmaster-node-deploy {
+  :Create an application;
+  :Create a new application version;
+  :Generate deployment hostname;
+}
+partition microverse-cli {
+  :Upload project files;
+}
+partition webmaster-node-deploy {
+  :Replicate deployment to web nodes;
+  :Register deployment handlers on web nodes;
+}
+partition user {
+  :CNAME record example.com to ${deployment-hostname};
+}
+partition webmaster-node-web {
+  :Serve requests for example.com;
+}
+end
+@enduml

@@ -1,0 +1,16 @@
+{
+  "name": "@microverse-network/daemon",
+  "version": "0.0.0",
+  "bin": {
+    "microverse": "bin/cli.js",
+    "microversed": "bin/daemon.js"
+  },
+  "dependencies": {
+    "@microverse-network/core": "0.0.0",
+    "env-paths": "^2.1.0",
+    "random-word": "^2.0.0",
+    "uuid": "^3.3.2",
+    "vm2": "^3.6.10",
+    "yargs": "^13.2.2"
+  }
+}

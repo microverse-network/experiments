@@ -1,0 +1,17 @@
+{
+  "name": "@microverse-network/log-viewer",
+  "version": "0.0.0",
+  "dependencies": {
+    "@microverse-network/core": "0.0.0",
+    "append-only": "^0.2.3",
+    "babel-polyfill": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6"
+  }
+}

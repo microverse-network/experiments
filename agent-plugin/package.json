@@ -1,0 +1,7 @@
+{
+  "name": "@microverse-network/agent-plugin",
+  "version": "0.0.0",
+  "dependencies": {
+    "@microverse-network/core": "0.0.0"
+  }
+}

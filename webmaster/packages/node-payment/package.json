@@ -1,0 +1,38 @@
+{
+  "name": "microverse-webmaster-node-payment",
+  "version": "0.0.1",
+  "description": "Microverse WebMaster Payment Node",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Sonmez Kartal <sonmez@koding.com>",
+  "license": "AGPL-3.0",
+  "bin": {
+    "microverse-webmaster-node-payment": "bin/main.js"
+  },
+  "scripts": {
+    "lint": "eslint lib",
+    "test": "npm-run-all lint"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "debug": "^3.1.0",
+    "microverse-core": "0.0.7",
+    "stripe": "^6.0.0",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-microverse": "^1.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.12.1"
+  }
+}

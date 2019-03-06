@@ -1,0 +1,3 @@
+#!/bin/bash
+
+microverse-node-bootstrap --id bootstrap-0 --port 3040 --url ws://localhost:3040

@@ -1,0 +1,11 @@
+{
+  "name": "@microverse-network/dummy",
+  "version": "0.0.0",
+  "bin": {
+    "microverse-dummy": "bin/dummy.js"
+  },
+  "dependencies": {
+    "@microverse-network/core": "0.0.0",
+    "yargs": "^13.2.2"
+  }
+}

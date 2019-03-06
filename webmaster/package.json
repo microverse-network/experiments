@@ -1,0 +1,34 @@
+{
+  "name": "@microverse-network/webmaster",
+  "description": "Microverse WebMaster",
+  "private": true,
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koding/microverse-webmaster.git"
+  },
+  "keywords": [],
+  "author": "Sonmez Kartal <sonmez@koding.com>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/koding/microverse-webmaster/issues"
+  },
+  "homepage": "https://github.com/koding/microverse-webmaster#readme",
+  "scripts": {
+    "bootstrap": "lerna bootstrap && lerna run --stream prepare",
+    "bootstrap-node": "scripts/bootstrap-node",
+    "clean": "lerna clean --yes",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^3.13.1",
+    "microverse-node-bootstrap": "^0.0.5"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@microverse-network/ledger",
+  "version": "0.0.0",
+  "main": "index.js",
+  "bin": {
+    "microverse-ledger": "bin/ledger.js"
+  },
+  "dependencies": {
+    "@microverse-network/core": "0.0.0",
+    "append-only": "^0.2.3",
+    "commander": "^2.19.0",
+    "debug": "^4.1.1"
+  }
+}

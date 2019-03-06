@@ -1,0 +1,56 @@
+@startuml
+
+!include ../common.puml
+
+participant user as "User"
+participant CLI as "microverse-cli"
+participant auth as "webmaster-node-auth"
+
+== Registration ==
+
+user -> CLI: $ micro register
+activate user
+deactivate user
+activate CLI
+
+CLI -> CLI: read email
+activate CLI
+deactivate CLI
+
+CLI -> CLI: read password
+activate CLI
+deactivate CLI
+
+CLI -> auth: POST /register
+activate auth
+CLI <-- auth: response
+deactivate auth
+
+alt register is success
+  user <- CLI: registered
+else email is already registered
+  user x<- CLI: error
+end
+
+|||
+
+== Login ==
+
+user -> CLI: $ micro login
+activate user
+deactivate user
+
+CLI -> auth: POST /login
+activate auth
+CLI <-- auth: session
+deactivate auth
+
+alt login is success
+  user <- CLI: logged in
+else invalid email / password
+  user x<- CLI: error
+end
+
+deactivate CLI
+
+@enduml
